@@ -1,0 +1,11 @@
+selenium
+pytesseract
+PIL
+ddddocr
+onnxruntime
+opencv-python
+numpy
+requests
+xlrd==1.2.0
+xlwt
+xlsxwriter
