@@ -4,6 +4,7 @@
 # @Author  : Liwenbin
 # @File    : login.py.py
 # @Project: WebSimulateLogin
+import os
 import uuid
 import logging
 import time
@@ -24,6 +25,10 @@ class LoginController(object):
         self._password_filler = PasswordFiller(self._browser)
         self._captcha_filler = CaptchaFiller(self._browser)
         self._login_submitter = LoginSubmitter(self._browser)
+        self._data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data")
+        # 生成的截图放到data目录下
+        if not os.path.exists(self._data_dir):
+            os.mkdir(self._data_dir)
 
     def _close_page(self):
         time.sleep(1)
@@ -82,7 +87,7 @@ class LoginController(object):
 
     def try_page_login(self, url, username, passwd):
         login_ret = False
-        img_path = "../data/" + str(uuid.uuid1()) + ".png"
+        img_path = os.path.join(self._data_dir, str(uuid.uuid1()) + ".png")
 
         try:
             self._open_page(url)

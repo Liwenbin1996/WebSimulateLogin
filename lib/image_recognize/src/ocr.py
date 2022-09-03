@@ -57,12 +57,10 @@ class DdddOcr(object):
         if det:
             ocr = False
             self.__graph_path = os.path.join(os.path.dirname(__file__), 'common_det.onnx')
-            # self.__graph_path = "/Users/wenbin/Documents/study/python/spider/ddddocr/ddddocr/common_det.onnx"
             self.__charset = []
         if ocr:
             if not beta:
                 self.__graph_path = os.path.join(os.path.dirname(__file__), 'common_old.onnx')
-                # self.__graph_path = "/Users/wenbin/Documents/study/python/spider/ddddocr/ddddocr/common_old.onnx"
                 self.__charset = ["", "掀", "袜", "顧", "徕", "榱", "荪", "浡", "其", "炎", "玉", "恩", "劣", "徽",
                                   "廉", "桂", "拂",
                                   "鳊", "撤",
@@ -1362,7 +1360,6 @@ class DdddOcr(object):
                                   "設", "⒆"]
             else:
                 self.__graph_path = os.path.join(os.path.dirname(__file__), 'common.onnx')
-                # self.__graph_path = "/Users/wenbin/Documents/study/python/spider/ddddocr/ddddocr/common.onnx"
                 self.__charset = ["", "笤", "谴", "膀", "荔", "佰", "电", "臁", "矍", "同", "奇", "芄", "吠", "6",
                                   "曛", "荇", "砥", "蹅", "晃", "厄", "殣", "ｃ", "辱", "钋", "杻", "價", "眙", "鴿",
                                   "⒄", "裙",
