@@ -9,8 +9,8 @@ python3+
 
 ## 使用步骤
 1. git clone git@github.com:Liwenbin1996/WebSimulateLogin.git
-2. pip install -p requirements.txt
-3. cd WebSimulateLogin
+2. cd WebSimulateLogin  
+3. pip install -r requirements.txt  
 4. python main -h 查看命令行帮助信息
 5. 通过命令行参数方式启动  
    python main.py -u www.github.com/login -a xxx -p yyy  
