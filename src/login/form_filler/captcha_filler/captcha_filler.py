@@ -6,6 +6,7 @@
 # @Project: WebSimulateLogin
 
 import logging
+import os.path
 
 from typing import Optional
 from dto.web_element import WebElement
@@ -110,7 +111,8 @@ class CaptchaFiller(BaseFiller):
         if not img_element:
             return ""
 
-        img_element.screenshot("codeImg.png")
+        code_png_filename = "codeImg.png"
+        img_element.screenshot(code_png_filename)
 
         try:
             img_str = CaptchaRecognizer().image_to_string("codeImg.png")
@@ -119,6 +121,12 @@ class CaptchaFiller(BaseFiller):
         except Exception as e:
             logging.debug("recognizer captcha failed, err={}".format(str(e)))
             return ""
+        finally:
+            try:
+                if os.path.exists(code_png_filename):
+                    os.remove(code_png_filename)
+            except Exception:
+                pass
 
     def find_input_box(self) -> Optional[WebElement]:
         func_list = [

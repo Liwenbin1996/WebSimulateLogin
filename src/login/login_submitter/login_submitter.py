@@ -5,6 +5,7 @@
 # @File    : login_submitter.py.py
 # @Project: WebSimulateLogin
 import logging
+import time
 import traceback
 
 from dto.web_element import WebElement
@@ -156,6 +157,11 @@ class LoginSubmitter(object):
                 break
         after_url = self._browser.current_url
 
+        # 可能页面还没加载完成，等待一下
+        if before_url == after_url:
+            time.sleep(1)
+            after_url = self._browser.current_url
+
         return self._judge_login_status(before_url, after_url)
 
     def _login_by_submit_web_element(self, web_element):
@@ -164,6 +170,12 @@ class LoginSubmitter(object):
             if isinstance(web_element, WebElement):
                 web_element.submit()
             after_url = self._browser.current_url
+
+            # 可能页面还没加载完成，等待一下
+            if before_url == after_url:
+                time.sleep(1)
+                after_url = self._browser.current_url
+
             return self._judge_login_status(before_url, after_url)
         except Exception:
             return False

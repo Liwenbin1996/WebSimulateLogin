@@ -31,8 +31,11 @@ class LoginController(object):
             os.mkdir(self._data_dir)
 
     def _close_page(self):
-        time.sleep(1)
-        self._browser.close()
+        try:
+            time.sleep(1)
+            self._browser.close()
+        except Exception:
+            pass
 
     def _open_page(self, url):
         # 打开网址
