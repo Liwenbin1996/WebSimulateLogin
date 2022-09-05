@@ -1,17 +1,19 @@
 # WebSimulateLogin
 网站模拟登录
 
-# 使用说明
+## 使用说明
 
 ## 依赖
 chormedriver
 python3+
 
 ## 使用步骤
-1. git clone
-2. pip install -p requestment.txt
+1. git clone git@github.com:Liwenbin1996/WebSimulateLogin.git
+2. pip install -p requirements.txt
 3. cd WebSimulateLogin
 4. python main -h 查看命令行帮助信息
+<img width="1061" alt="截屏2022-09-05 上午9 14 21" src="https://user-images.githubusercontent.com/30257830/188342146-1c78847b-689d-4aaf-88be-fcfab38a422e.png">
+
 5. 通过命令行参数方式启动
    python main -u www.github.com/login -a xxx -p yyy
    执行该命令后，会有chorme浏览器窗口打开，并尝试登录github。最终在终端输出登录信息
