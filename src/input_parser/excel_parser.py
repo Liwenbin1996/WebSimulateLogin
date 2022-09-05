@@ -66,7 +66,7 @@ class ExcelParser(BaseParser):
 
         urls = []
         for url in urls_tmp:
-            if not str(url).startswith("http://") and not str(url).startswith("https://"):
+            if not str(url).startswith(self.http_header) and not str(url).startswith(self.https_header):
                 if self._try_request_url(self.http_header + url):
                     urls.append(self.http_header + url)
                 else:

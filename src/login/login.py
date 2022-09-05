@@ -69,6 +69,13 @@ class LoginController(object):
         if self._submit_login(web_element) is False:
             return False
 
+        # 如果还能找到用户名和密码的输入框，则认为登录失败
+        username_input = self._username_filler.find_input_box()
+        password_input = self._password_filler.find_input_box()
+        if username_input or password_input:
+            logging.info("debug 3")
+            return False
+
         return True
 
     def pre_check(self, url):
@@ -106,7 +113,7 @@ class LoginController(object):
                         break
 
             self._browser.save_screenshot(img_path)
-            logging.info("save screenshot, url={} img_path={}".format(url, img_path))
+            logging.debug("save screenshot, url={} img_path={}".format(url, img_path))
         except Exception as e:
             logging.debug("login failed, url={} err={}".format(url, str(e)))
         finally:

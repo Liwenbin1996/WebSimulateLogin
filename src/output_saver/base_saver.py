@@ -10,3 +10,6 @@ class BaseSaver(object):
 
     def save(self, login_info):
         raise NotImplementedError
+
+    def close(self):
+        raise NotImplementedError
