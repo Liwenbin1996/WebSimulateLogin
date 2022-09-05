@@ -17,5 +17,5 @@ python3+
    执行该命令后，会有chrome浏览器窗口打开，并尝试登录github。最终在终端输出登录信息
 6. 通过excel文件方式启动  
    python main.py -t excel -i {filename}  
-   执行该命令，会读取excel中的网站信息，逐个进行模拟登录。最终会将结果输出到当前文件夹的result.xlsx文件，你也可以指定输出位置，需要在命令行中使用-o选型  
+   执行该命令，会读取excel中的网站信息，逐个进行模拟登录。最终会将结果输出到当前文件夹的result.xlsx文件，你也可以指定输出位置，需要在命令行中使用-o选项  
    excel文件的格式参考src/input_parser/test/test_input_excel.xlsx
