@@ -3,7 +3,7 @@
 ## 使用说明
 
 ## 依赖
-chrome浏览器
+chrome浏览器  
 chromedriver（https://chromedriver.chromium.org/downloads）  
 python3+
 
